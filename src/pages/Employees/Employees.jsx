@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SelectCountry from '../../components/SelectCountry'
+import EmployeesTable from '../../components/EmployeesTable/EmployeesTable'
+import SelectCountry from '../../components/SelectCountry/SelectCountry'
 
 
 export default function Employees() {
@@ -10,6 +11,7 @@ export default function Employees() {
         <table id="employee-table" class="display"></table>
         <Link to='/NewEmployee'>Create Employee</Link>
         <SelectCountry />
+        <EmployeesTable />
 
     </div>
   )
