@@ -1,35 +1,28 @@
 import { useCallback, useEffect } from 'react'
 import './Modal.css'
+import closeIcon from '../../assets/close-icon.svg'
+
+/**
+ * Returns a modal component with props which are explained below:
+ * the width of the modal is managed via the width attribute of the style prop or the large prop or the small prop
+ * - large : boolean - true or false
+ * - small : boolean - true or false
+ * - style : object - written in React Inline Css Style according to the schema below
+ * {
+    width : '',
+    backgroundColor: '',
+    borderRadius: '',
+    color: '',
+    fontSize: ''
+  }
+ * - onClose : function - the closing behavior or the modal
+ * - show : boolean - with regards to the local state of [show, setShow] if the modal is visible or not
+ * - the modal content is defined bu the children prop directly in the <Modal> </Modal> component
+ *
+ */
 
 export default function Modal(props) {
-    // il y a du code dans Modal.css non présent ici
-
-    // il faut installer react-transition-group
-    // yarn add react-transition-group
-
-    // dans Employees.jsx le code ajouté est : 
-    // const [show, setShow] = useState(false)
-    // <button onClick={()=>setShow(true)}>Save</button>
-    // <Modal onClick={()=>setShow(false)} show={show}/>
-
-
-    // let modalStyle = {
-    //     width : '90%',
-    //     backgroundColor: 'lightgrey',
-    //     borderRadius: '10px',
-    //     color: 'white',
-    //     fontSize: ''
-    //   }
-    // <Modal
-    // title='Modale P14'
-    // large={true}
-    // style={modalStyle} 
-    // onClose={() => setShow(false) } 
-    // show={show}
-    // >
-    // <p>La prop children</p>
-    // </Modal>
-
+    
     const { onClose } = props;
     const closeOnEscapeKeyDown = useCallback((e) => {
         if ((e.charCode || e.keyCode) === 27) {
@@ -65,17 +58,13 @@ export default function Modal(props) {
                 fontSize:`${props.style.fontSize}`,
             }}
         >
-            <div className='modal-header'>
-                <h4 className='modal-title'>
-                    {props.title}
-                </h4>
-            </div>
+
             <div className='modal-body'>
-                {props.children}
+                {props.children}                
             </div>
-            <div className='modal-footer'>
-                <button onClick={props.onClose} className='button'>Close</button>
-            </div>
+            <button onClick={props.onClose} className='button'>
+                <img className='button-icon' src={closeIcon} alt='close' />
+            </button>
         </div>
 
     </div>

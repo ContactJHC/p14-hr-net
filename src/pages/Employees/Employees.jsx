@@ -8,7 +8,7 @@ import Modal from '../../components/Modal/Modal'
 export default function Employees() {
   const [show, setShow] = useState(false)
   let modalStyle = {
-    width : '90%',
+    width : '',
     backgroundColor: 'lightgrey',
     borderRadius: '10px',
     color: 'white',
@@ -24,7 +24,6 @@ export default function Employees() {
         <EmployeesTable />
         <button onClick={()=>setShow(true)}>Save</button>
         <Modal
-          title='Modale P14'
           large={true}
           style={modalStyle} 
           onClose={() => setShow(false) } 
