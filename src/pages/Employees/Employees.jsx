@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import Modal from '@contactjhc/modal-library'
+import { Modal } from '@contactjhc/modal-library'
+import { useCallback, useEffect } from 'react'
 import DatePicker from '../../components/DatePicker/DatePicker'
 // import { DatePicker } from "@mui/x-date-pickers"
 import EmployeesTable from '../../components/EmployeesTable/EmployeesTable'
 import SelectCountry from '../../components/SelectCountry/SelectCountry'
-import Modal from '../../components/Modal/Modal'
+// import Modal from '../../components/Modal/Modal'
 
 
 export default function Employees() {
@@ -23,12 +24,6 @@ export default function Employees() {
 
         <h1>Current Employees</h1>
         <DatePicker/>
-
-        <table id="employee-table" class="display"></table>
-        <Link to='/NewEmployee'>Create Employee</Link>
-        <SelectCountry />
-        <EmployeesTable />
-        <button onClick={()=>setShow(true)}>Save</button>
         <Modal
           large={true}
           style={modalStyle} 
@@ -37,6 +32,12 @@ export default function Employees() {
         >
           <p>La prop children</p>
         </Modal>
+        <table id="employee-table" class="display"></table>
+        <Link to='/NewEmployee'>Create Employee</Link>
+        <SelectCountry />
+        <EmployeesTable />
+        <button onClick={()=>setShow(true)}>Save</button>
+
 
     </div>
   )
