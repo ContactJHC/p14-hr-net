@@ -1076,9 +1076,9 @@
   "version" "0.2.3"
 
 "@contactjhc/modal-library@^0.1.0":
-  "integrity" "sha512-YZcE+ZsfHo2m2pd4uTCxFJevzi7sks7zrhoVH0tPqav4bzSUmkmApuMXRA8GTynkyzfA1q+ES2Shu86y6TQtSg=="
-  "resolved" "https://registry.npmjs.org/@contactjhc/modal-library/-/modal-library-0.1.3.tgz"
-  "version" "0.1.3"
+  "integrity" "sha512-KZyeouJjk8MGNt408tcjtFSmGTbDFwot/nvEyZBAB1NMRvi9XPM+OQIEpxUPoi38vvSSy82Utl8rpF8yDj8smA=="
+  "resolved" "https://registry.npmjs.org/@contactjhc/modal-library/-/modal-library-0.1.5.tgz"
+  "version" "0.1.5"
   dependencies:
     "@testing-library/jest-dom" "^5.16.5"
     "@testing-library/react" "^13.4.0"

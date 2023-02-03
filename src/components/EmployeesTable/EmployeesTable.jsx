@@ -2,15 +2,15 @@ import * as React from 'react'
 import { DataGrid } from '@mui/x-data-grid'
 
 const columns = [
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
-  { field: 'startDate', headerName: 'Start Date', width: 130 },
-  { field: 'department', headerName: 'Department', width: 130 },
-  { field: 'birthDate', headerName: 'Date of Birth', width: 130 },
-  { field: 'street', headerName: 'Street', width: 130 },
-  { field: 'city', headerName: 'City', width: 130 },
-  { field: 'state', headerName: 'State', width: 130 },
-  { field: 'zipCode', headerName: 'Zip Code', width: 130 }
+  { field: 'firstName', headerName: 'First name', width: 115 },
+  { field: 'lastName', headerName: 'Last name', width: 115 },
+  { field: 'startDate', headerName: 'Start Date', width: 115 },
+  { field: 'department', headerName: 'Department', width: 115 },
+  { field: 'birthDate', headerName: 'Date of Birth', width: 115 },
+  { field: 'street', headerName: 'Street', width: 115 },
+  { field: 'city', headerName: 'City', width: 115 },
+  { field: 'state', headerName: 'State', width: 115 },
+  { field: 'zipCode', headerName: 'Zip Code', width: 115 }
 ]
 
 const rows = [

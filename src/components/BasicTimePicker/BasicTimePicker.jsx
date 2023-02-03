@@ -4,16 +4,17 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-export default function BasicTimePicker() {
+export default function BasicTimePicker({ label, updatedCallBack }) {
   const [value, setValue] = useState(null)
 
   return (
     <LocalizationProvider dateAdapter={AdapterMoment}>
       <DatePicker
-        label="Basic example"
+        label={label}
         value={value}
         onChange={(newValue) => {
           setValue(newValue);
+          updatedCallBack(newValue)
         }}
         renderInput={(params) => <TextField {...params} />}
       />

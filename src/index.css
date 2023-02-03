@@ -34,4 +34,15 @@ label {
 
 .address {
   margin-top: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.87);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+button#save-employee {
+  margin-top: 1rem;
+  margin-bottom: 10rem;
 }
