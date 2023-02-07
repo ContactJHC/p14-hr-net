@@ -3,12 +3,13 @@ import { Box } from "@mui/system"
 import { useState } from "react";
 
 
-export default function SelectCountry() {
+export default function SelectCountry({ updatedCallBack }) {
 
     const [country, setCountry] = useState('')
 
     const handleChange = (event) => {
       setCountry(event.target.value)
+      updatedCallBack(event.target.value)
     }
 
     const states = [
@@ -261,7 +262,7 @@ export default function SelectCountry() {
     label="country"
     onChange={handleChange}
   >
-    {states.map(state => <MenuItem value={state.abbreviation}>{state.name}</MenuItem>)}
+    {states.map(state => <MenuItem value={state.abbreviation} key={Math.random()*1000}>{state.name}</MenuItem>)}
   </Select>
 </FormControl>
 </Box>

@@ -3,12 +3,13 @@ import { Box } from "@mui/system"
 import { useState } from "react";
 
 
-export default function SelectCountry() {
+export default function SelectDepartment({ updatedCallBack }) {
 
-    const [country, setCountry] = useState('')
+    const [department, setDepartment] = useState('')
 
     const handleChange = (event) => {
-      setCountry(event.target.value)
+      setDepartment(event.target.value)
+      updatedCallBack(event.target.value)
     }
 
     const departments = [
@@ -22,15 +23,15 @@ export default function SelectCountry() {
   return (
         <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
-        <InputLabel id="country-select-label">State</InputLabel>
+        <InputLabel id="department-select-label">Department</InputLabel>
         <Select
-            labelId="country-select-label"
-            id="country-select"
-            value={country}
-            label="country"
+            labelId="department-select-label"
+            id="department-select"
+            value={department}
+            label="department"
             onChange={handleChange}
         >
-            {departments.map(department => <MenuItem value={department}>{department}</MenuItem>)}
+            {departments.map(department => <MenuItem value={department} key={Math.random()*1000}>{department}</MenuItem>)}
         </Select>
         </FormControl>
         </Box>

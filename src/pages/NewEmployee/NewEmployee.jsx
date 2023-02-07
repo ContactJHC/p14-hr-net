@@ -21,6 +21,8 @@ export default function NewEmployee() {
 
     const [date, setDate] = useState('')
     const [birth, setBirth] = useState('')
+    const [department, setDepartment] = useState('')
+    const [country, setCountry] = useState('')
 
     function saveEmployee() {
         setShow(true)
@@ -28,22 +30,23 @@ export default function NewEmployee() {
         const lastName = document.getElementById('last-name');
         // const dateOfBirth = document.getElementById('date-of-birth');
         // const startDate = document.getElementById('start-date');
-        const department = document.getElementById('department');
+        // const department = document.getElementById('department');
         const street = document.getElementById('street');
         const city = document.getElementById('city');
-        const state = document.getElementById('state');
+        // const state = document.getElementById('state');
         const zipCode = document.getElementById('zip-code');
     
         const employees = JSON.parse(localStorage.getItem('employees')) || [];
         const employee = {
+            id : Math.trunc(Math.random()*1000/(Math.random())),
             firstName: firstName.value,
             lastName: lastName.value,
-            dateOfBirth: birth,
-            startDate: date,
-            department: department.value,
+            dateOfBirth: birth.toISOString(),
+            startDate: date.toISOString(),
+            department: department,
             street: street.value,
             city: city.value,
-            state: state.value,
+            state: country,
             zipCode: zipCode.value
         };
         console.log(birth, date)
@@ -54,7 +57,7 @@ export default function NewEmployee() {
     }
 
   return (
-    <body>
+    <>
         <div className="title">
             <h1>HRnet</h1>
         </div>
@@ -78,11 +81,11 @@ export default function NewEmployee() {
                     <legend>Address</legend>
                     <TextField id="street" className="adress-input" label="Street" variant="outlined" />
                     <TextField id="city" className="adress-input" label="City" variant="outlined" />
-                    <SelectCountry id="state" className="adress-input" />
+                    <SelectCountry id="state" className="adress-input" updatedCallBack={(s) => setCountry(s) } />
                     <TextField id="zip-code" className="adress-input" label="Zip Code" variant="outlined" />
                 </div>
                 <legend>Department</legend>
-                <SelectDepartment id="department" />
+                <SelectDepartment id="department" updatedCallBack={(d) => setDepartment(d) }/>
             </Box>
             <div style={{position:"relative", zIndex:"1"}}>
             <Modal
@@ -95,9 +98,7 @@ export default function NewEmployee() {
             </Modal>
             </div>
             <button id="save-employee" onClick={saveEmployee}>Save</button>
-            {/* <button onclick="saveEmployee()">Save</button> */}
         </div>
-        {/* <div id="confirmation" className="modal">Employee Created!</div> */}
-    </body>
+    </>
   )
 }
