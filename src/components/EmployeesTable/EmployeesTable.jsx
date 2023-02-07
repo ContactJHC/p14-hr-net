@@ -20,17 +20,31 @@ const rows = [
   {id: 4, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
   {id: 5, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
   {id: 6, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
-  {id: 7, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'}
+  {id: 7, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 8, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 9, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 10, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 11, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 12, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 13, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 14, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'},
+  {id: 15, firstName: 'jou', lastName: 'dou', startDate: '14/01/1995', department: 'IT', birthDate: '21/05/1984', street: 'champollion', city: 'paris', state: 'france', zipCode: '75001'}
 ]
 
 export default function DataTable() {
+  const [page, setPage] = React.useState(0)
+  const [pageSize, setPageSize] = React.useState(5);
+
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={8}
-        rowsPerPageOptions={[5]}
+        pageSize={pageSize}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+        rowsPerPageOptions={[5, 10, 15]}
+        page={page}
+        onPageChange={(newPage) => setPage(newPage)}
         checkboxSelection
       />
     </div>
