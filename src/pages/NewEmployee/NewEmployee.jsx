@@ -41,8 +41,8 @@ export default function NewEmployee() {
             id : Math.trunc(Math.random()*1000/(Math.random())),
             firstName: firstName.value,
             lastName: lastName.value,
-            dateOfBirth: birth.toISOString(),
-            startDate: date.toISOString(),
+            dateOfBirth: Date.parse(birth),
+            startDate: new Date(date).toLocaleDateString('fr-FR'),
             department: department,
             street: street.value,
             city: city.value,
@@ -89,7 +89,7 @@ export default function NewEmployee() {
             </Box>
             <div style={{position:"relative", zIndex:"1"}}>
             <Modal
-                large={true}
+                small={true}
                 style={modalStyle} 
                 onClose={() => setShow(false) } 
                 show={show}
