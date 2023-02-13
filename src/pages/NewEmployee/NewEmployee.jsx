@@ -5,8 +5,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SelectCountry from '../../components/SelectCountry/SelectCountry';
 import SelectDepartment from '../../components/SelectDepartment/SelectDepartment'
-// import Modal from '../../components/Modal/Modal'
-// import Modal from '@contactjhc/modal-library/dist/components/Modal/Modal';
 import { Modal } from '@contactjhc/modal-library';
 
 export default function NewEmployee() {
@@ -28,12 +26,8 @@ export default function NewEmployee() {
         setShow(true)
         const firstName = document.getElementById('first-name');
         const lastName = document.getElementById('last-name');
-        // const dateOfBirth = document.getElementById('date-of-birth');
-        // const startDate = document.getElementById('start-date');
-        // const department = document.getElementById('department');
         const street = document.getElementById('street');
         const city = document.getElementById('city');
-        // const state = document.getElementById('state');
         const zipCode = document.getElementById('zip-code');
     
         const employees = JSON.parse(localStorage.getItem('employees')) || [];
