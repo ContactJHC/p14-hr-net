@@ -10,7 +10,7 @@ const EmployeesTable = ({ data }) => {
       {
         accessorKey: 'firstName',
         header: 'First Name',
-        size: 115
+        size: 50
 
       },
 
@@ -18,7 +18,7 @@ const EmployeesTable = ({ data }) => {
 
         accessorKey: 'lastName',
         header: 'Last Name',
-        size: 115
+        size: 50
 
       },
 
@@ -26,7 +26,7 @@ const EmployeesTable = ({ data }) => {
 
         accessorKey: 'startDate', 
         header: 'Start Date',
-        size: 115
+        size: 30
 
       },
 
@@ -34,31 +34,25 @@ const EmployeesTable = ({ data }) => {
 
         accessorKey: 'department',
         header: 'Department',
-        size: 115
+        size: 50
 
       },
-
       {
-
         accessorKey: 'birthDate',
         header: 'Date of Birth',
-        size: 115
-
+        size: 30
       },
-
       {
-
         accessorKey: 'street',
         header: 'Street',
-        size: 115
+        size: 50
 
       },
-
       {
 
         accessorKey: 'city',
         header: 'City',
-        size: 115
+        size: 50
 
       },
 
@@ -66,7 +60,7 @@ const EmployeesTable = ({ data }) => {
 
         accessorKey: 'state',
         header: 'State',
-        size: 115
+        size: 50
 
       },
 
@@ -74,7 +68,7 @@ const EmployeesTable = ({ data }) => {
 
         accessorKey: 'zipCode',
         header: 'Zip Code',
-        size: 115
+        size: 50
 
       }
 
