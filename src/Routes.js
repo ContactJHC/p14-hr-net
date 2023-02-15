@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Employees from "./pages/Employees/Employees";
 import NewEmployee from "./pages/NewEmployee/NewEmployee";
+import Header from "./components/Header/Header";
 
 export const routes = [
     {
@@ -22,6 +23,7 @@ export const routes = [
 function Layout() {
     return (
         <>
+            <Header/>
             <Outlet/>
         </>
     )

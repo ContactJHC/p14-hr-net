@@ -57,9 +57,6 @@ export default function NewEmployee() {
 
   return (
     <>
-        <div className="title">
-            <h1>HR-Net</h1>
-        </div>
         <div className="container">
             <div className="contained-container">
                 <div className="form-header">
