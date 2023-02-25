@@ -5,11 +5,18 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SelectCountry from '../../components/SelectCountry/SelectCountry';
 import SelectDepartment from '../../components/SelectDepartment/SelectDepartment'
-// import { Modal } from '@contactjhc/modal-library';
-import Modal from '../../components/Modal/Modal';
+import { Modal } from '@contactjhc/modal-library';
+// import Modal from '../../components/Modal/Modal';
 import closeIcon from '../../assets/ri_close-circle-fill.svg'
+import { useDispatch, useSelector } from 'react-redux';
+// import { addEmployee } from '../../store';
+import { addEmployee } from '../../Reducer';
 
 export default function NewEmployee() {
+    let employees = useSelector( s => s ? s.employees : [])
+
+    const dispatch = useDispatch()
+
     const [show, setShow] = useState(false)
     let modalStyle = {
       width : '',
@@ -35,7 +42,7 @@ export default function NewEmployee() {
         const city = document.getElementById('city');
         const zipCode = document.getElementById('zip-code');
     
-        const employees = JSON.parse(localStorage.getItem('employees')) || [];
+        // const employees = JSON.parse(localStorage.getItem('employees')) || [];
         const employee = {
             id : Math.trunc(Math.random()*1000/(Math.random())),
             firstName: firstName.value,
@@ -48,10 +55,20 @@ export default function NewEmployee() {
             state: country,
             zipCode: zipCode.value
         };
-        console.log(birth, date)
-        employees.push(employee);
-        localStorage.setItem('employees', JSON.stringify(employees));
-        console.log(employees);
+        // employees.push(employee);
+
+        // localStorage.setItem('employees', JSON.stringify(employees));
+        // console.log(employees);
+
+        dispatch(
+            // {
+            addEmployee(employee)
+            // type: "addEmployee",
+            // payload: {
+            //     employees : employees
+            // }
+        // }
+        )
         
     }
 
@@ -95,8 +112,6 @@ export default function NewEmployee() {
                         show={show}
                         isIcon={true}
                         closeIcon={closeIcon}
-                    
-
                     >
                         <p>Employee Created !</p>
                     </Modal>
